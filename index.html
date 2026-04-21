@@ -13,63 +13,117 @@
   <nav class="border-b border-zinc-800 bg-zinc-950">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-semibold text-white">Christian Festa LLC</h1>
-      <a href="#contact" class="text-sm font-medium hover:text-white transition">Contact</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#apps" class="hover:text-white transition">Apps</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
     </div>
   </nav>
 
   <header class="max-w-5xl mx-auto px-6 pt-24 pb-16 text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-6xl font-bold tracking-tight mb-4">Christian Festa LLC</h2>
-      <p class="text-3xl text-zinc-400 mb-8">Developer of Ghosty</p>
+      <p class="text-3xl text-zinc-400 mb-8">Building privacy-first &amp; game-day tools</p>
       <p class="text-xl text-zinc-300 max-w-md mx-auto">
-        Privacy-first iOS app that filters unwanted connections on your device
+        Simple, powerful iOS apps that respect your data and elevate your experience.
       </p>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 pb-24">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h3 class="text-2xl font-semibold mb-6">About Ghosty</h3>
-        <p class="text-lg text-zinc-400 leading-relaxed">
-          Ghosty is a privacy-first iOS application developed by Christian Festa LLC. 
-          It filters unwanted connections on your device using custom domains you add 
-          (limited to 3 in the free tier, unlimited in premium) or curated blocklist categories 
-          you can toggle on/off.
+  <main class="max-w-5xl mx-auto px-6 pb-24" id="apps">
+    <div class="text-center mb-12">
+      <p class="text-sm uppercase tracking-[3px] text-zinc-500 mb-3">Our Apps</p>
+      <h3 class="text-4xl font-semibold tracking-tight">Tools built for real moments</h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Ghosty Card -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center">
+            <span class="text-4xl">👻</span>
+          </div>
+          <div>
+            <h4 class="text-3xl font-semibold">Ghosty</h4>
+            <p class="text-emerald-400 text-sm font-medium">Privacy-first DNS filter</p>
+          </div>
+        </div>
+        
+        <p class="text-zinc-400 leading-relaxed mb-8 flex-1">
+          Blocks unwanted connections on your iPhone or iPad using custom domains and curated blocklists. 
+          Everything runs 100% locally with zero data collection.
         </p>
-        <p class="text-lg text-zinc-400 leading-relaxed mt-6">
-          Premium unlocks viewing of all traffic logs (free tier shows only blocked entries) 
-          and unlimited custom domains. All features run locally on your iPhone or iPad — 
-          zero data collection, zero servers.
-        </p>
-        <div class="mt-10">
-          <a href="https://cvfesta.github.io/ghosty-legal/privacy.html" 
-             target="_blank"
-             class="inline-flex items-center gap-2 bg-white text-black font-semibold px-8 py-4 rounded-2xl hover:bg-zinc-200 transition">
-            Read Privacy Policy
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-zinc-400">100% local • No tracking</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-zinc-400">Custom domains + blocklists</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-emerald-400">✓</span>
+            <span class="text-zinc-400">Premium traffic logs</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="https://christianfesta.com/ghosty-legal/privacy.html" target="_blank"
+             class="inline-flex justify-center items-center gap-2 bg-white text-black font-semibold px-6 py-3.5 rounded-2xl hover:bg-zinc-200 transition text-sm">
+            Privacy Policy
+          </a>
+          <a href="https://christianfesta.com/ghosty-legal/terms.html" target="_blank"
+             class="inline-flex justify-center items-center gap-2 border border-zinc-700 hover:bg-zinc-900 transition px-6 py-3.5 rounded-2xl text-sm">
+            Terms of Use
           </a>
         </div>
       </div>
-      <div class="bg-zinc-900 p-8 rounded-3xl border border-zinc-800">
-        <p class="text-sm uppercase tracking-widest text-zinc-500 mb-4">Why Choose Ghosty?</p>
-        <ul class="space-y-6 text-zinc-300">
-          <li class="flex gap-4">
-            <span class="text-emerald-400 text-2xl">✓</span>
-            <span>Runs 100% locally on your device</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="text-emerald-400 text-2xl">✓</span>
-            <span>No tracking, no analytics, no data collection</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="text-emerald-400 text-2xl">✓</span>
-            <span>Custom domains + curated blocklists</span>
-          </li>
-          <li class="flex gap-4">
-            <span class="text-emerald-400 text-2xl">✓</span>
-            <span>Traffic logs & premium features</span>
-          </li>
-        </ul>
+
+      <!-- Walkout Intros Card -->
+      <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 flex flex-col ring-1 ring-offset-4 ring-offset-zinc-950 ring-white/10">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-orange-500/10 rounded-2xl flex items-center justify-center">
+            <span class="text-4xl">🎤</span>
+          </div>
+          <div>
+            <h4 class="text-3xl font-semibold">Walkout Intros</h4>
+            <p class="text-orange-400 text-sm font-medium">AI-powered game-day announcements</p>
+          </div>
+        </div>
+        
+        <p class="text-zinc-400 leading-relaxed mb-8 flex-1">
+          Create professional stadium-style walk-up intros for your entire team. 
+          Generate AI voice scripts, pair them with walk-up songs, and play full lineups in order — 
+          perfect for coaches, announcers, and dugouts.
+        </p>
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-orange-400">✓</span>
+            <span class="text-zinc-400">AI stadium voices + custom scripts</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-orange-400">✓</span>
+            <span class="text-zinc-400">Team lineups &amp; song integration</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <span class="text-orange-400">✓</span>
+            <span class="text-zinc-400">Pro: Unlimited teams &amp; players</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <a href="https://christianfesta.com/walkout-intros/privacy.html"
+             class="inline-flex justify-center items-center gap-2 bg-white text-black font-semibold px-6 py-3.5 rounded-2xl hover:bg-zinc-200 transition text-sm">
+            Privacy Policy
+          </a>
+          <a href="https://christianfesta.com/walkout-intros/terms.html"
+             class="inline-flex justify-center items-center gap-2 border border-zinc-700 hover:bg-zinc-900 transition px-6 py-3.5 rounded-2xl text-sm">
+            Terms of Use
+          </a>
+        </div>
       </div>
     </div>
   </main>
