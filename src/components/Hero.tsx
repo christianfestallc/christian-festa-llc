@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { trackEvent } from "../analytics";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/walkout-intros/id6761736614";
 
@@ -40,6 +41,9 @@ export default function Hero() {
           href={APP_STORE_URL}
           target="_blank"
           rel="noreferrer"
+          onClick={() =>
+            trackEvent("App Store Clicked", { source: "hero_pill" }, { sendBeacon: true })
+          }
           className="hero-pill inline-flex items-center gap-2 text-xs font-medium bg-white/[0.04] border border-white/10 backdrop-blur-sm pl-2 pr-3 py-1.5 rounded-full text-zinc-300 mb-10 hover:bg-white/[0.08] hover:border-white/20 transition"
         >
           <span className="relative flex w-1.5 h-1.5">
@@ -62,6 +66,9 @@ export default function Hero() {
             target="_blank"
             rel="noreferrer"
             aria-label="Download Walkout Intros on the App Store"
+            onClick={() =>
+              trackEvent("App Store Clicked", { source: "hero_badge" }, { sendBeacon: true })
+            }
             className="inline-block hover:opacity-90 transition"
           >
             <img

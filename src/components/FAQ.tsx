@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import { trackEvent } from "../analytics";
 
 type QA = { q: string; a: string };
 
@@ -130,6 +131,11 @@ export default function FAQ() {
               {group.items.map((item) => (
                 <details
                   key={item.q}
+                  onToggle={(e) => {
+                    if (e.currentTarget.open) {
+                      trackEvent("FAQ Opened", { question: item.q, group: group.title });
+                    }
+                  }}
                   className="group bg-zinc-950 border border-white/10 hover:border-white/20 transition rounded-xl"
                 >
                   <summary className="px-5 py-4 cursor-pointer flex justify-between items-center gap-4 text-white font-medium">

@@ -1,4 +1,5 @@
 import { useReveal } from "../hooks/useReveal";
+import { trackEvent } from "../analytics";
 
 export default function Ghosty() {
   const ref = useReveal<HTMLElement>();
@@ -34,6 +35,13 @@ export default function Ghosty() {
                 href="https://christianfesta.com/ghosty-legal/privacy.html"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackEvent(
+                    "Ghosty Link Clicked",
+                    { kind: "privacy" },
+                    { sendBeacon: true },
+                  )
+                }
                 className="text-zinc-400 hover:text-white transition underline-offset-4 hover:underline"
               >
                 Privacy Policy
@@ -42,6 +50,13 @@ export default function Ghosty() {
                 href="https://christianfesta.com/ghosty-legal/terms.html"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackEvent(
+                    "Ghosty Link Clicked",
+                    { kind: "terms" },
+                    { sendBeacon: true },
+                  )
+                }
                 className="text-zinc-400 hover:text-white transition underline-offset-4 hover:underline"
               >
                 Terms of Use

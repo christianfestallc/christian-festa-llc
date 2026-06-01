@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { trackEvent } from "../analytics";
 
 export default function Nav() {
   const ref = useRef<HTMLElement>(null);
@@ -40,6 +41,9 @@ export default function Nav() {
           href="https://apps.apple.com/us/app/walkout-intros/id6761736614"
           target="_blank"
           rel="noreferrer"
+          onClick={() =>
+            trackEvent("App Store Clicked", { source: "nav" }, { sendBeacon: true })
+          }
           className="text-sm bg-white text-black font-medium px-4 py-1.5 rounded-full hover:bg-zinc-200 transition"
         >
           Get the app

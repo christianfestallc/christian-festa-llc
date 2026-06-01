@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { trackEvent } from "../analytics";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/walkout-intros/id6761736614";
 
@@ -111,6 +112,13 @@ export default function Pricing() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noreferrer"
+            onClick={() =>
+              trackEvent(
+                "Pricing CTA Clicked",
+                { tier: "free", source: "pricing" },
+                { sendBeacon: true },
+              )
+            }
             className="inline-flex justify-center items-center bg-white/[0.06] border border-white/10 text-white font-medium px-5 py-3 rounded-xl hover:bg-white/[0.1] transition text-sm"
           >
             Get Walkout Intros
@@ -149,6 +157,13 @@ export default function Pricing() {
               href={APP_STORE_URL}
               target="_blank"
               rel="noreferrer"
+              onClick={() =>
+                trackEvent(
+                  "Pricing CTA Clicked",
+                  { tier: "pro", source: "pricing" },
+                  { sendBeacon: true },
+                )
+              }
               className="inline-flex justify-center items-center bg-white text-black font-semibold px-5 py-3 rounded-xl hover:bg-zinc-200 transition text-sm"
             >
               Start free trial

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { trackEvent } from "../analytics";
 
 const APP_STORE_URL = "https://apps.apple.com/us/app/walkout-intros/id6761736614";
 
@@ -58,6 +59,9 @@ export default function FinalCTA() {
             target="_blank"
             rel="noreferrer"
             aria-label="Download Walkout Intros on the App Store"
+            onClick={() =>
+              trackEvent("App Store Clicked", { source: "final_cta" }, { sendBeacon: true })
+            }
             className="inline-block hover:opacity-90 transition"
           >
             <img
