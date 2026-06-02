@@ -41,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
-                  href="https://christianfesta.com/walkout-intros/privacy.html"
+                  href="/walkout-intros/privacy.html"
                   className="text-zinc-400 hover:text-white transition"
                 >
                   Privacy Policy
@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://christianfesta.com/walkout-intros/terms.html"
+                  href="/walkout-intros/terms.html"
                   className="text-zinc-400 hover:text-white transition"
                 >
                   Terms of Use

@@ -32,7 +32,7 @@ export default function Ghosty() {
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
               <a
-                href="https://christianfesta.com/ghosty-legal/privacy.html"
+                href="/ghosty/privacy.html"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() =>
@@ -47,7 +47,7 @@ export default function Ghosty() {
                 Privacy Policy
               </a>
               <a
-                href="https://christianfesta.com/ghosty-legal/terms.html"
+                href="/ghosty/terms.html"
                 target="_blank"
                 rel="noreferrer"
                 onClick={() =>
