@@ -149,6 +149,7 @@
 .studio-ledger-date { margin: 0; font-size: 0.88rem; color: var(--text-faint); }
 
 .product {
+  --brand: var(--accent);   /* each row overrides this inline from products.ts */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem;
