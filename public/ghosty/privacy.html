@@ -36,10 +36,10 @@
         <!-- Intro -->
         <div class="prose dark:prose-invert max-w-none text-lg">
             <p class="text-xl">Ghosty ("we," "us," or "the App") is a privacy-first iOS application developed by <strong>Christian Festa LLC</strong>.</p>
-            <p>It filters unwanted connections on your device using custom domains you add (limited to 3 in the free tier, unlimited in premium) or curated blocklist categories you can toggle on/off. Premium unlocks viewing of all traffic logs (free tier shows only blocked entries) and unlimited custom domains. All features run locally on your iPhone or iPad.</p>
+            <p>It is a privacy firewall that runs on your device: it inspects the domain lookups your apps make, answers the ones on your blocklists locally, and forwards the rest to the DNS resolver you choose. Blocking uses curated categories you can toggle on or off and domains you add yourself (up to 10 in the free tier, unlimited in Premium). Premium also shows every lookup (the free tier shows only blocked entries), longer Insights history, real-time protection, and a choice of resolver. All filtering runs locally on your iPhone or iPad.</p>
            
-            <p class="font-semibold text-2xl mt-10 mb-2 text-red-600 dark:text-red-400">We do not collect any information from you.</p>
-            <p class="text-xl font-medium">Ghosty collects <strong>zero</strong> personal data, device identifiers, usage statistics, crash reports, or any other information. Everything stays on your device.</p>
+            <p class="font-semibold text-2xl mt-10 mb-2 text-red-600 dark:text-red-400">We do not collect any information about what you browse or block.</p>
+            <p class="text-xl font-medium">Lookups, domains, IP addresses, and your blocklists never leave your device. The only data Ghosty ever sends is optional, anonymous usage reports, which are <strong>off by default</strong> and described below.</p>
         </div>
 
         <div class="my-12 border-t border-zinc-200 dark:border-zinc-800"></div>
@@ -52,14 +52,22 @@
                 <li>Your added domains and toggle settings for curated categories are stored only in secure local storage on your device. Curated lists (if updated) are downloaded as public, non-personalized files with no user identifiers attached.</li>
                 <li><strong>Traffic viewing:</strong> Premium users see full local traffic logs exclusively on-device. Free users see only blocked entries. These logs are never transmitted.</li>
                 <li><strong>In-app purchases:</strong> Apple processes all subscriptions and payments. We receive no payment details, email addresses, or purchase-related personal information.</li>
-                <li><strong>Analytics / tracking / third parties:</strong> The app uses no analytics SDKs, advertising frameworks, crash reporters, or any third-party services that would collect or transmit data.</li>
+                <li><strong>Advertising and tracking:</strong> The app uses no advertising frameworks and no tracking. It does not share data with data brokers or ad networks.</li>
+            </ul>
+
+            <h2>Optional Usage Reports</h2>
+            <p>Ghosty can send anonymous usage reports to help us understand which features are used. Usage reports are <strong>off by default</strong>. You are asked during setup, and you can switch them on or off at any time in Settings.</p>
+            <ul class="space-y-4 text-base">
+                <li><strong>What is sent:</strong> counts of product actions (for example, that a category was switched on or a purchase completed, including the product purchased) and a hashed device identifier that is not linked to you.</li>
+                <li><strong>What is never sent:</strong> domains, lookups, IP addresses, blocklist entries, or anything you type.</li>
+                <li><strong>Where it goes:</strong> reports are delivered only to TelemetryDeck (telemetrydeck.com), an analytics service designed for anonymous, privacy-preserving usage statistics. They are used for analytics only and are not used for tracking or advertising.</li>
             </ul>
 
             <h2>Data Storage</h2>
             <p>All your settings, custom lists, and local logs (if any) remain on your device using iOS secure storage. They are never backed up to iCloud unless you manually enable it for the app (under your full control). Deleting the app removes all local data.</p>
 
             <h2>Sharing or Selling Data</h2>
-            <p>We do not share, sell, or disclose any data because we collect none.</p>
+            <p>We do not share, sell, or disclose any data. The only third party that receives anything is TelemetryDeck, and only the anonymous usage counts described above, only while usage reports are switched on.</p>
 
             <h2>Security</h2>
             <p>Your privacy is protected by design—nothing ever leaves your device. The app follows Apple's security guidelines and runs in Apple's sandboxed environment.</p>
@@ -68,7 +76,7 @@
             <p>Ghosty is not directed at children under 13 and does not knowingly process data from anyone.</p>
 
             <h2>Your Rights (GDPR, CCPA, etc.)</h2>
-            <p>Since we hold no data about you, there is nothing for us to provide, correct, or delete. You fully control everything stored locally on your device.</p>
+            <p>We hold no data that identifies you. Usage reports, if you turn them on, are anonymous and cannot be linked back to you, so there is nothing for us to provide, correct, or delete. You fully control everything stored locally on your device, and you can switch usage reports off at any time in Settings.</p>
 
             <h2>Changes to This Policy</h2>
             <p>We may update this Privacy Policy occasionally. Any changes will be posted in the app with a new effective date. Continued use of Ghosty after changes means you accept the updated policy.</p>
@@ -84,9 +92,7 @@
                 <div><strong>Christian Festa LLC</strong></div>
                 <div>Rocklin, California, USA</div>
                 <div>Support: <a href="mailto:support@christianfesta.com" class="text-blue-600 dark:text-blue-400 hover:underline">support@christianfesta.com</a></div>
-                <div>X: <a href="https://x.com/ChristianF67163" class="text-blue-600 dark:text-blue-400 hover:underline">@ChristianF67163</a></div>
             </div>
-            <p class="mt-8 text-xs text-zinc-500 dark:text-zinc-400">Recommended: Add your preferred support email here for faster responses.</p>
         </div>
 
         <!-- Footer -->

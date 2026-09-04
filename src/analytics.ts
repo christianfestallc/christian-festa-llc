@@ -2,8 +2,9 @@ import mixpanel from "mixpanel-browser";
 
 const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN;
 
-/** Tags every event with which site emitted it — same project, two sources. */
-const SITE = "walkout-intros";
+/** Tags every event with which page emitted it — same project, several
+ * sources. Set by initMixpanel(); the Walkout landing page is the default. */
+let SITE = "walkout-intros";
 
 /** Coarse device bucket from viewport width — enough to segment events on. */
 const deviceType = (): "mobile" | "tablet" | "desktop" => {
@@ -38,7 +39,8 @@ const superProperties = (): Record<string, unknown> => ({
   ...utmParams(),
 });
 
-export const initMixpanel = () => {
+export const initMixpanel = (site: string = "walkout-intros") => {
+  SITE = site;
   if (!MIXPANEL_TOKEN) {
     console.warn("Mixpanel token not set. Analytics disabled.");
     return;

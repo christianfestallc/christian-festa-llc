@@ -6,7 +6,6 @@ import Features from "./components/Features";
 import HowItWorks from "./components/HowItWorks";
 import Pricing from "./components/Pricing";
 import FAQ from "./components/FAQ";
-import Ghosty from "./components/Ghosty";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 
@@ -21,7 +20,6 @@ export default function App() {
       <HowItWorks />
       <Pricing />
       <FAQ />
-      <Ghosty />
       <FinalCTA />
       <Footer />
     </>

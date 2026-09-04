@@ -16,6 +16,13 @@ export default function Footer() {
               AI-powered stadium intros for every team. Built for coaches, announcers,
               and dugouts.
             </p>
+            <a
+              href="/"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-white transition"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ccff33]" />
+              A Christian Festa LLC product · see the studio
+            </a>
           </div>
           <div>
             <h4 className="text-white font-semibold text-sm mb-4">Product</h4>
@@ -61,16 +68,6 @@ export default function Footer() {
                   className="text-zinc-400 hover:text-white transition"
                 >
                   support@christianfesta.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://x.com/ChristianF67163"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-zinc-400 hover:text-white transition"
-                >
-                  @ChristianF67163
                 </a>
               </li>
             </ul>
