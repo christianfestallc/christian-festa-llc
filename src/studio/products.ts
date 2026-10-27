@@ -20,6 +20,7 @@ export type Product = {
 };
 
 export const APP_STORE_WALKOUT = "https://apps.apple.com/us/app/walkout-intros/id6761736614";
+export const APP_STORE_GHOSTY = "https://apps.apple.com/us/app/ghosty-privacy/id6746877305";
 
 export const products: Product[] = [
   {
@@ -47,9 +48,9 @@ export const products: Product[] = [
     id: "ghosty",
     name: "Ghosty Privacy",
     category: "iOS app · Privacy & Security",
-    status: "submitting",
-    statusLabel: "1.2.0 · In App Store submission",
-    accent: "#34d399",
+    status: "live",
+    statusLabel: "Live on the App Store",
+    accent: "#00c805",
     icon: "/img/ghosty.svg",
     blurb:
       "Stop trackers in every app. A privacy firewall that lives on your phone: it inspects each DNS lookup on the device, answers the tracking ones locally, and forwards the rest to the resolver you choose. No account, no server, nothing leaves the phone.",
@@ -59,7 +60,8 @@ export const products: Product[] = [
       { src: "/img/studio/ghosty-activity.jpg", alt: "Ghosty: Activity" },
     ],
     links: [
-      { label: "Support", href: "/ghosty/support.html", primary: true },
+      { label: "View on the App Store", href: APP_STORE_GHOSTY, primary: true, external: true },
+      { label: "Support", href: "/ghosty/support.html" },
       { label: "Privacy", href: "/ghosty/privacy.html" },
       { label: "Terms", href: "/ghosty/terms.html" },
     ],
