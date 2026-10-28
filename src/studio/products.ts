@@ -25,7 +25,7 @@ export const products: Product[] = [
   {
     id: "walkout-intros",
     name: "Walkout Intros",
-    category: "Sports · iPhone",
+    category: "Sports · iPhone and iPad",
     accent: "#fb923c",
     icon: "/img/walkout-dark.svg",
     iconInset: 0.16,
@@ -47,7 +47,7 @@ export const products: Product[] = [
   {
     id: "ghosty",
     name: "Ghosty Privacy",
-    category: "Privacy & Security · iPhone",
+    category: "Privacy & Security · iPhone and iPad",
     accent: "#00c805",
     icon: "/img/ghosty.svg",
     iconInset: 0.05,
