@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 pt-8 border-t border-white/[0.06] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500">
-          <p>© 2026 Christian Festa LLC · Rocklin, California</p>
+          <p>© 2026 Christian Festa LLC</p>
           <p>All rights reserved.</p>
         </div>
       </div>
