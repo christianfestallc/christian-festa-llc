@@ -13,6 +13,9 @@ export type Product = {
   /** The product's own brand accent — the studio chrome stays lime. */
   accent: string;
   icon?: string;
+  /** Coming-soon line shown in place of screenshots; a product with one
+   *  shows no blurb or chips. */
+  teaser?: string;
   blurb: string;
   chips: string[];
   shots: { src: string; alt: string }[];
@@ -33,10 +36,10 @@ export const products: Product[] = [
     icon: "/img/walkout-dark.svg",
     blurb:
       "Stadium intros for every team. Build a roster, pair each player with one of five AI announcer voices and a song cued to the drop, then run game day with one tap. Eleven sports. Free to try, Pro subscription.",
-    chips: ["SwiftUI", "AI voice generation", "Apple Music", "StoreKit subscriptions"],
+    chips: ["Five AI announcer voices", "Eleven sports", "Apple Music or your own library", "Free to try"],
     shots: [
       { src: "/img/studio/walkout-teams.jpg", alt: "Walkout Intros: the Teams screen" },
-      { src: "/img/studio/walkout-game-mode.jpg", alt: "Walkout Intros: Game Mode" },
+      { src: "/img/studio/walkout-stage-live.jpg", alt: "Walkout Intros: a player walking out on game day" },
     ],
     links: [
       { label: "View on the App Store", href: APP_STORE_WALKOUT, primary: true, external: true },
@@ -71,11 +74,12 @@ export const products: Product[] = [
     name: "Aloha Fitness",
     category: "iOS app · Health & Fitness",
     status: "building",
-    statusLabel: "In development",
-    accent: "#5fd3c7",
-    blurb:
-      "An AI calorie and nutrition tracker for the Aloha Fitness brand. An on-device LLM handles natural-language meal logging, photo meal analysis, and plain-language metabolism insights.",
-    chips: ["On-device LLM", "Multimodal meal analysis", "Adaptive TDEE"],
+    statusLabel: "Coming soon",
+    accent: "#ff6482",
+    icon: "/img/aloha-heart.svg",
+    teaser: "Something good is cooking.",
+    blurb: "",
+    chips: [],
     shots: [],
     links: [{ label: "alohafitness.net", href: "https://alohafitness.net/", external: true }],
   },

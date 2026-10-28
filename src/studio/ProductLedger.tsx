@@ -6,7 +6,8 @@ const STATUS_DATE = new Date().toLocaleDateString("en-US", { month: "long", year
 
 function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
   const ref = useReveal<HTMLElement>();
-  const building = product.status === "building";
+  // A teaser card reads as a product of its own, not a dashed placeholder.
+  const building = product.status === "building" && !product.teaser;
   const style = { "--brand": product.accent } as React.CSSProperties;
 
   const copy = (
@@ -28,12 +29,14 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
       </div>
       <p className="product-category">{product.category}</p>
       <h2 className="product-name studio-display">{product.name}</h2>
-      <p className="product-blurb">{product.blurb}</p>
-      <div className="product-chips">
-        {product.chips.map((chip) => (
-          <span className="product-chip" key={chip}>{chip}</span>
-        ))}
-      </div>
+      {product.blurb && <p className="product-blurb">{product.blurb}</p>}
+      {product.chips.length > 0 && (
+        <div className="product-chips">
+          {product.chips.map((chip) => (
+            <span className="product-chip" key={chip}>{chip}</span>
+          ))}
+        </div>
+      )}
       <div className="product-links">
         {product.links.map((link) => (
           <a
@@ -56,7 +59,11 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
 
   const media = (
     <div className={flip ? "product-media product-media--start reveal" : "product-media reveal"}>
-      {product.shots.length > 0 ? (
+      {product.teaser ? (
+        <div className="product-teaser">
+          <p>{product.teaser}</p>
+        </div>
+      ) : product.shots.length > 0 ? (
         product.shots.map((shot, i) => (
           <img
             key={shot.src}

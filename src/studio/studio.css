@@ -224,6 +224,29 @@
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
 }
 .product-shot--lead { width: 15.5rem; border-radius: 1.9rem; }
+/* coming-soon teaser: one display line over a glow in the product's colour */
+.product-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 22rem);
+  height: 19rem;
+  padding: 1.75rem;
+  border-radius: 1.9rem;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(70% 55% at 50% 45%, color-mix(in srgb, var(--brand) 32%, transparent), transparent 70%),
+    var(--bg-3);
+  box-sizing: border-box;
+  text-align: center;
+}
+.product-teaser p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  line-height: 1.02;
+  color: var(--text);
+}
 .product-shot-placeholder {
   display: flex;
   align-items: center;
