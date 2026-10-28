@@ -1,8 +1,10 @@
-/* studio.css — the home page at `/`. A neutral, light page about the apps;
- * each app keeps its own brand accent via the `--brand` custom property set
- * on its card. */
+/* studio.css — the home page at `/`. A neutral page about the apps that
+ * follows the visitor's light or dark setting; each app keeps its own brand
+ * accent via the `--brand` custom property set on its card. Tokens live on
+ * :root (this sheet only loads on the home page) so html and body can use them. */
 
-.studio {
+:root {
+  color-scheme: light dark;
   --bg: #f6f6f3;
   --surface: #ffffff;
   --text: #111312;
@@ -11,9 +13,35 @@
   --line: #e3e3de;
   --line-strong: #cfcfc8;
   --tile: #141414;
+  --tile-line: transparent;
+  --solid: #111312;
+  --solid-hover: #2c302d;
+  --on-solid: #ffffff;
+  --brand-tint: 12%;
+  --shot-shadow: rgba(0, 0, 0, 0.35);
   --font-display: "Inter Tight", "Inter", system-ui, -apple-system, sans-serif;
   --measure: 72rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1110;
+    --surface: #171a18;
+    --text: #eef0ec;
+    --text-soft: #a8ada9;
+    --text-faint: #979c98;
+    --line: #2a2e2b;
+    --line-strong: #3d423e;
+    --tile: #000000;
+    --tile-line: #2f3330;
+    --solid: #eef0ec;
+    --solid-hover: #ffffff;
+    --on-solid: #111312;
+    --brand-tint: 16%;
+    --shot-shadow: rgba(0, 0, 0, 0.6);
+  }
+}
 
+.studio {
   background: var(--bg);
   color: var(--text);
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -21,8 +49,8 @@
   min-height: 100vh;
 }
 /* index.css paints html/body black for the Walkout page; match the overscroll here. */
-html:has(.studio), html:has(.studio) body { background: #f6f6f3; }
-.studio ::selection { background: rgba(17, 19, 18, 0.15); color: inherit; }
+html:has(.studio), html:has(.studio) body { background: var(--bg); }
+.studio ::selection { background: color-mix(in srgb, var(--text) 18%, transparent); color: inherit; }
 /* :where() keeps this at zero specificity so component colours win. */
 .studio :where(a) { color: inherit; text-decoration: none; }
 .studio :where(a:hover) { color: var(--text-soft); }
@@ -38,6 +66,7 @@ html:has(.studio), html:has(.studio) body { background: #f6f6f3; }
   /* Percentage padding would resolve against the parent's width, so derive it from the tile. */
   padding: calc(var(--tile-size) * var(--inset, 0.1));
   background: var(--tile);
+  box-shadow: inset 0 0 0 1px var(--tile-line);
   box-sizing: border-box;
 }
 .app-tile img { width: 100%; height: auto; display: block; }
@@ -58,8 +87,8 @@ html:has(.studio), html:has(.studio) body { background: #f6f6f3; }
 }
 .studio-btn--outline { border: 1px solid var(--line-strong); }
 .studio-btn--outline:hover { border-color: var(--text); color: var(--text); }
-.studio-btn--solid { min-height: 48px; padding: 0 1.4rem; background: var(--text); color: #fff; }
-.studio-btn--solid:hover { background: #2c302d; color: #fff; }
+.studio-btn--solid { min-height: 48px; padding: 0 1.4rem; background: var(--solid); color: var(--on-solid); }
+.studio-btn--solid:hover { background: var(--solid-hover); color: var(--on-solid); }
 
 /* ---- header ---- */
 .studio-header { border-bottom: 1px solid var(--line); }
@@ -134,7 +163,7 @@ html:has(.studio), html:has(.studio) body { background: #f6f6f3; }
   height: 460px;
   padding: 2rem 1rem 0;
   border-radius: 20px;
-  background: color-mix(in srgb, var(--brand) 12%, #fff);
+  background: color-mix(in srgb, var(--brand) var(--brand-tint), var(--surface));
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -145,7 +174,7 @@ html:has(.studio), html:has(.studio) body { background: #f6f6f3; }
   display: block;
   border-radius: 24px 24px 0 0;
   margin-bottom: -60px;
-  box-shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px -24px var(--shot-shadow);
 }
 .product-shot--lead { width: 48%; max-width: 232px; border-radius: 28px 28px 0 0; margin-bottom: -40px; }
 

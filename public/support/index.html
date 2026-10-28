@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="color-scheme" content="light dark">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support · Walkout Intros and Ghosty Privacy</title>
     <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -13,6 +14,13 @@
         .card { background: white; border-radius: 16px; padding: 24px; margin: 24px 0; border: 1px solid #eee; }
         .links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 8px 0 0; padding: 0; list-style: none; }
         .muted { font-size: 12px; color: #666; margin-top: 40px; }
+        @media (prefers-color-scheme: dark) {
+            body { background: #111; color: #ddd; }
+            h1, h2 { color: #fff; }
+            a { color: #34d399; }
+            .card { background: #1f2937; border-color: #374151; }
+            .muted { color: #a3a3a3; }
+        }
     </style>
 </head>
 <body>
