@@ -1,7 +1,6 @@
 import StudioNav from "./StudioNav";
 import StudioHero from "./StudioHero";
 import ProductLedger from "./ProductLedger";
-import PersonBehind from "./PersonBehind";
 import StudioFooter from "./StudioFooter";
 import ContactModal from "./ContactModal";
 import { useState } from "react";
@@ -19,7 +18,6 @@ export default function Studio() {
       <StudioNav onContact={() => openContact("nav")} />
       <StudioHero />
       <ProductLedger />
-      <PersonBehind />
       <StudioFooter onContact={() => openContact("footer")} />
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </div>

@@ -1,8 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { trackEvent } from "../analytics";
-import { RESUME_URL, products } from "./products";
+import { products } from "./products";
 
 export default function StudioNav({ onContact }: { onContact: () => void }) {
   const ref = useRef<HTMLElement>(null);
@@ -31,18 +30,10 @@ export default function StudioNav({ onContact }: { onContact: () => void }) {
               {p.name}
             </a>
           ))}
-          <a href="#about" className="studio-link">About</a>
         </div>
         <div className="studio-actions">
-          <a
-            href={RESUME_URL}
-            className="studio-btn studio-btn--ghost"
-            onClick={() => trackEvent("Resume Link Clicked", { source: "nav" }, { sendBeacon: true })}
-          >
-            Resume ↗
-          </a>
           <button type="button" className="studio-btn studio-btn--accent" onClick={onContact}>
-            Let's talk
+            Contact
           </button>
         </div>
       </div>

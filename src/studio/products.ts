@@ -85,5 +85,4 @@ export const products: Product[] = [
   },
 ];
 
-export const RESUME_URL = "https://cvfesta.github.io/resume/";
 export const SUPPORT_EMAIL = "support@christianfesta.com";

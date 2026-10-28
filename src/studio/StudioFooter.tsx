@@ -1,4 +1,4 @@
-import { RESUME_URL, SUPPORT_EMAIL } from "./products";
+import { SUPPORT_EMAIL } from "./products";
 
 export default function StudioFooter({ onContact }: { onContact: () => void }) {
   return (
@@ -9,7 +9,7 @@ export default function StudioFooter({ onContact }: { onContact: () => void }) {
             <span className="studio-dot" aria-hidden="true" />
             Christian Festa LLC
           </span>
-          <p>An independent iOS studio and consulting entity. S-Corp, Rocklin, California.</p>
+          <p>An independent iOS app studio in Rocklin, California.</p>
         </div>
         <div className="studio-footer-col">
           <span className="studio-footer-label">Walkout Intros</span>
@@ -25,15 +25,13 @@ export default function StudioFooter({ onContact }: { onContact: () => void }) {
           <a href="/ghosty/terms.html">Terms</a>
         </div>
         <div className="studio-footer-col">
-          <span className="studio-footer-label">Elsewhere</span>
-          <a href={RESUME_URL}>Interactive resume ↗</a>
+          <span className="studio-footer-label">Contact</span>
           <button type="button" className="studio-footer-btn" onClick={onContact}>Send a message</button>
           <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
         </div>
       </div>
       <div className="studio-footer-bar">
         <span>© {new Date().getFullYear()} Christian Festa LLC · Rocklin, California</span>
-        <span>Available for contract and corp-to-corp engagements</span>
       </div>
     </footer>
   );

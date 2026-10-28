@@ -27,9 +27,8 @@ export default function StudioHero() {
         <span className="line">Real products.</span>
       </h1>
       <p className="hero-sub">
-        Native iOS apps designed, built, and published end to end by one person, alongside
-        the consulting practice that pays for the lab. Two apps shipped or shipping, one in
-        development.
+        Native iOS apps designed, built, and published end to end. Two apps live on the
+        App Store, one in development.
       </p>
       <div className="hero-cta">
         <a
@@ -42,7 +41,6 @@ export default function StudioHero() {
             <path d="M3 8h10M9 4l4 4-4 4" />
           </svg>
         </a>
-        <a href="#about" className="studio-btn studio-btn--ghost">The person behind it</a>
       </div>
     </header>
   );
