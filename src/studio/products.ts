@@ -53,8 +53,8 @@ export const products: Product[] = [
     accent: "#00c805",
     icon: "/img/ghosty.svg",
     blurb:
-      "Stop trackers in every app. A privacy firewall that lives on your phone: it inspects each DNS lookup on the device, answers the tracking ones locally, and forwards the rest to the resolver you choose. No account, no server, nothing leaves the phone.",
-    chips: ["Packet tunnel extension", "lwIP TCP/IP stack", "On-device DNS", "Family plan"],
+      "Stop trackers in every app. A privacy firewall that lives on your phone: it stops the trackers, analytics, and telemetry your apps send in the background, across every app, not just the browser. See what your apps look up, switch whole categories off with one tap, and pause it whenever you like. No account, no server: what Ghosty sees stays on your phone.",
+    chips: ["Every app, not just the browser", "No account, no server", "Pause anytime", "Family plan"],
     shots: [
       { src: "/img/studio/ghosty-home.jpg", alt: "Ghosty: Home, protection on" },
       { src: "/img/studio/ghosty-activity.jpg", alt: "Ghosty: Activity" },
