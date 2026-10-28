@@ -2,69 +2,50 @@ import { useReveal } from "../hooks/useReveal";
 import { trackEvent } from "../analytics";
 import { products, type Product } from "./products";
 
-const STATUS_DATE = new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" });
-
 function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
   const ref = useReveal<HTMLElement>();
-  // A teaser card reads as a product of its own, not a dashed placeholder.
-  const building = product.status === "building" && !product.teaser;
   const style = { "--brand": product.accent } as React.CSSProperties;
+  const track = (label: string) =>
+    trackEvent("Product Link Clicked", { product: product.id, label }, { sendBeacon: true });
 
-  const copy = (
-    <div className="product-copy reveal">
-      <div className="product-head">
-        <div className="product-icon" aria-hidden="true">
-          {product.icon ? (
+  return (
+    <article className={flip ? "product product--flip" : "product"} id={product.id} ref={ref} style={style}>
+      <div className="product-copy reveal">
+        <div className="product-head">
+          <span className="app-tile app-tile--lg" style={{ "--inset": product.iconInset } as React.CSSProperties} aria-hidden="true">
             <img src={product.icon} alt="" />
-          ) : (
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M3 12h4l2-5 3 10 2-5h7" />
-            </svg>
-          )}
+          </span>
+          <div>
+            <h2 className="product-name studio-display">{product.name}</h2>
+            <p className="product-category">{product.category}</p>
+          </div>
         </div>
-        <span className="product-status">
-          <span className="product-status-dot" aria-hidden="true" />
-          {product.statusLabel}
-        </span>
-      </div>
-      <p className="product-category">{product.category}</p>
-      <h2 className="product-name studio-display">{product.name}</h2>
-      {product.blurb && <p className="product-blurb">{product.blurb}</p>}
-      {product.chips.length > 0 && (
-        <div className="product-chips">
-          {product.chips.map((chip) => (
-            <span className="product-chip" key={chip}>{chip}</span>
-          ))}
-        </div>
-      )}
-      <div className="product-links">
-        {product.links.map((link) => (
+        <p className="product-tagline">{product.tagline}</p>
+        <p className="product-blurb">{product.blurb}</p>
+        <div className="product-actions">
           <a
-            key={link.label}
-            href={link.href}
-            className={link.primary ? "product-link product-link--primary" : "product-link"}
-            target={link.external ? "_blank" : undefined}
-            rel={link.external ? "noreferrer" : undefined}
-            onClick={() =>
-              trackEvent("Product Link Clicked", { product: product.id, label: link.label }, { sendBeacon: true })
-            }
+            href={product.appStore}
+            className="studio-btn studio-btn--solid"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => track("View on the App Store")}
           >
-            {link.label}
-            {link.external ? " ↗" : ""}
+            View on the App Store
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 11L11 5M6 5h5v5" />
+            </svg>
           </a>
-        ))}
-      </div>
-    </div>
-  );
-
-  const media = (
-    <div className={flip ? "product-media product-media--start reveal" : "product-media reveal"}>
-      {product.teaser ? (
-        <div className="product-teaser">
-          <p>{product.teaser}</p>
+          <div className="product-links">
+            {product.links.map((link) => (
+              <a key={link.label} href={link.href} className="product-link" onClick={() => track(link.label)}>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
-      ) : product.shots.length > 0 ? (
-        product.shots.map((shot, i) => (
+      </div>
+      <div className="product-media reveal">
+        {product.shots.map((shot, i) => (
           <img
             key={shot.src}
             src={shot.src}
@@ -72,34 +53,15 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
             loading="lazy"
             className={i === (flip ? 0 : product.shots.length - 1) ? "product-shot product-shot--lead" : "product-shot"}
           />
-        ))
-      ) : (
-        <div className="product-shot-placeholder">Screenshots when the build is ready</div>
-      )}
-    </div>
-  );
-
-  return (
-    <article
-      className={building ? "product product--building" : "product"}
-      id={product.id}
-      ref={ref}
-      style={style}
-    >
-      {flip ? media : copy}
-      {flip ? copy : media}
+        ))}
+      </div>
     </article>
   );
 }
 
 export default function ProductLedger() {
-  const headRef = useReveal<HTMLDivElement>();
   return (
-    <section className="studio-section studio-ledger" aria-labelledby="products-heading">
-      <div className="studio-ledger-head reveal" ref={headRef}>
-        <p className="studio-kicker" id="products-heading">01 — The products</p>
-        <p className="studio-ledger-date">Status as of {STATUS_DATE}</p>
-      </div>
+    <section className="studio-section studio-ledger" aria-label="Apps">
       {products.map((p, i) => (
         <ProductRow key={p.id} product={p} flip={i % 2 === 1} />
       ))}

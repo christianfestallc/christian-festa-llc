@@ -1,42 +1,21 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 import { products } from "./products";
 
-export default function StudioNav({ onContact }: { onContact: () => void }) {
-  const ref = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        ref.current,
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.7, ease: "power3.out", delay: 0.1 }
-      );
-    },
-    { scope: ref }
-  );
-
+export default function StudioNav() {
   return (
-    <nav className="studio-nav" ref={ref} aria-label="Studio">
-      <div className="studio-pill">
-        <a href="#top" className="studio-mark">
-          <span className="studio-dot" aria-hidden="true" />
-          Christian Festa LLC
-        </a>
-        <div className="studio-links">
+    <header className="studio-header">
+      <nav className="studio-nav" aria-label="Apps">
+        <div className="studio-nav-apps">
           {products.map((p) => (
-            <a key={p.id} href={`#${p.id}`} className="studio-link">
-              {p.name}
+            <a key={p.id} href={`#${p.id}`} className="studio-nav-app" aria-label={p.name}>
+              <span className="app-tile app-tile--sm" style={{ "--inset": p.iconInset } as React.CSSProperties} aria-hidden="true">
+                <img src={p.icon} alt="" />
+              </span>
+              <span className="studio-nav-name">{p.name}</span>
             </a>
           ))}
         </div>
-        <div className="studio-actions">
-          <button type="button" className="studio-btn studio-btn--accent" onClick={onContact}>
-            Contact
-          </button>
-        </div>
-      </div>
-    </nav>
+        <a href="#support" className="studio-btn studio-btn--outline">Support</a>
+      </nav>
+    </header>
   );
 }

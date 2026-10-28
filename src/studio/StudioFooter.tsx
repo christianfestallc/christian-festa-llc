@@ -1,37 +1,32 @@
-import { SUPPORT_EMAIL } from "./products";
+import { products } from "./products";
 
-export default function StudioFooter({ onContact }: { onContact: () => void }) {
+/** The legal publisher is named here and nowhere else on the page: App Review
+ * matches it to the App Store seller, without the site promoting the company. */
+export default function StudioFooter() {
+  const legal = products.map((p) => ({
+    name: p.name,
+    links: p.links.filter((l) => l.label !== "Learn more"),
+  }));
+
   return (
     <footer className="studio-footer">
-      <div className="studio-footer-grid">
-        <div className="studio-footer-brand">
-          <span className="studio-mark">
-            <span className="studio-dot" aria-hidden="true" />
-            Christian Festa LLC
-          </span>
-          <p>An independent iOS app studio in Rocklin, California.</p>
+      <div className="studio-footer-inner">
+        <div className="studio-footer-cols">
+          {legal.map((app) => (
+            <div className="studio-footer-col" key={app.name}>
+              <p className="studio-footer-label">{app.name}</p>
+              {app.links.map((l) => (
+                <a key={l.label} href={l.href}>
+                  {l.label === "Privacy" ? "Privacy Policy" : l.label === "Terms" ? "Terms of Use" : l.label}
+                </a>
+              ))}
+            </div>
+          ))}
         </div>
-        <div className="studio-footer-col">
-          <span className="studio-footer-label">Walkout Intros</span>
-          <a href="/walkout-intros/">Product page</a>
-          <a href="/walkout-intros/support.html">Support</a>
-          <a href="/walkout-intros/privacy.html">Privacy</a>
-          <a href="/walkout-intros/terms.html">Terms</a>
-        </div>
-        <div className="studio-footer-col">
-          <span className="studio-footer-label">Ghosty</span>
-          <a href="/ghosty/support.html">Support</a>
-          <a href="/ghosty/privacy.html">Privacy</a>
-          <a href="/ghosty/terms.html">Terms</a>
-        </div>
-        <div className="studio-footer-col">
-          <span className="studio-footer-label">Contact</span>
-          <button type="button" className="studio-footer-btn" onClick={onContact}>Send a message</button>
-          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
-        </div>
-      </div>
-      <div className="studio-footer-bar">
-        <span>© {new Date().getFullYear()} Christian Festa LLC · Rocklin, California</span>
+        <p className="studio-footer-bar">
+          © {new Date().getFullYear()} Christian Festa LLC. Walkout Intros and Ghosty Privacy are published by
+          Christian Festa LLC.
+        </p>
       </div>
     </footer>
   );
