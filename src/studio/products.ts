@@ -15,6 +15,8 @@ export type Product = {
   blurb: string;
   appStore: string;
   shots: { src: string; alt: string }[];
+  /** A Mac window shown behind the first phone shot, for apps that are also on the Mac. */
+  mac?: { src: string; alt: string };
   links: ProductLink[];
 };
 
@@ -47,18 +49,19 @@ export const products: Product[] = [
   {
     id: "ghosty",
     name: "Ghosty Privacy",
-    category: "Privacy & Security · iPhone and iPad",
+    category: "Privacy & Security · iPhone, iPad and Mac",
     accent: "#00c805",
     icon: "/img/ghosty.svg",
     iconInset: 0.05,
     tagline: "Stop trackers in every app.",
     blurb:
-      "A privacy firewall that lives on your phone. It stops the trackers, analytics and telemetry your apps send in the background, across every app, not just the browser. No account, no server: what Ghosty sees stays on your phone.",
+      "A privacy firewall for your iPhone, iPad and Mac. It stops the trackers, analytics and telemetry your apps send in the background, across every app, not just the browser. On the Mac it also shows which app is talking to whom. No account, no server: what Ghosty sees stays on your device. One subscription covers all three.",
     appStore: APP_STORE_GHOSTY,
     shots: [
       { src: "/img/studio/ghosty-home.jpg", alt: "Ghosty Privacy: Home, protection on" },
       { src: "/img/studio/ghosty-activity.jpg", alt: "Ghosty Privacy: Activity" },
     ],
+    mac: { src: "/img/studio/ghosty-mac-home.jpg", alt: "Ghosty Privacy for Mac: Home, protection on" },
     links: [
       { label: "Support", href: "/ghosty/support.html" },
       { label: "Privacy", href: "/ghosty/privacy.html" },

@@ -178,6 +178,31 @@ html:has(.studio), html:has(.studio) body { background: var(--bg); }
 }
 .product-shot--lead { width: 48%; max-width: 232px; border-radius: 28px 28px 0 0; margin-bottom: -40px; }
 
+/* Mac and iPhone: the Mac window runs off the bottom-left, the phone stands in front on the right. */
+.product-media--mac { position: relative; justify-content: flex-end; padding-right: 6%; }
+.product-mac {
+  position: absolute;
+  top: 2.25rem;
+  bottom: -1px;
+  left: 6%;
+  width: 82%;
+  height: calc(100% - 2.25rem + 1px);
+  object-fit: cover;
+  object-position: left top;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 48px -28px var(--shot-shadow);
+}
+.product-shot--front {
+  position: relative;
+  width: 36%;
+  max-width: 176px;
+  margin-bottom: -56px;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 24px 48px -16px var(--shot-shadow);
+}
+
 /* ---- support ---- */
 .studio-support { background: var(--surface); border-top: 1px solid var(--line); }
 .studio-support-inner {

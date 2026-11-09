@@ -44,6 +44,12 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
           </div>
         </div>
       </div>
+      {product.mac ? (
+        <div className="product-media product-media--mac reveal">
+          <img src={product.mac.src} alt={product.mac.alt} loading="lazy" className="product-mac" />
+          <img src={product.shots[0].src} alt={product.shots[0].alt} loading="lazy" className="product-shot product-shot--front" />
+        </div>
+      ) : (
       <div className="product-media reveal">
         {product.shots.map((shot, i) => (
           <img
@@ -55,6 +61,7 @@ function ProductRow({ product, flip }: { product: Product; flip: boolean }) {
           />
         ))}
       </div>
+      )}
     </article>
   );
 }
