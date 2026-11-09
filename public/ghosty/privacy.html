@@ -26,7 +26,7 @@
         <!-- Header -->
         <div class="text-center mb-12">
             <h1 class="text-5xl font-bold tracking-tight mb-2">Ghosty Privacy Policy</h1>
-            <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Effective Date: March 1, 2026</p>
+            <p class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">Effective Date: November 9, 2026</p>
             <div class="mt-4 inline-flex items-center gap-2 text-xs bg-white dark:bg-zinc-900 px-4 py-2 rounded-full border border-zinc-200 dark:border-zinc-800">
                 <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                 Privacy-first by design
@@ -35,8 +35,8 @@
 
         <!-- Intro -->
         <div class="prose dark:prose-invert max-w-none text-lg">
-            <p class="text-xl">Ghosty ("we," "us," or "the App") is a privacy-first iOS application developed by <strong>Christian Festa LLC</strong>.</p>
-            <p>It is a privacy firewall that runs on your device: it inspects the domain lookups your apps make, answers the ones on your blocklists locally, and forwards the rest to the DNS resolver you choose. Blocking uses curated categories you can toggle on or off and domains you add yourself (up to 10 in the free tier, unlimited in Premium). Premium also shows every lookup (the free tier shows only blocked entries), longer Insights history, real-time protection, and a choice of resolver. All filtering runs locally on your iPhone or iPad.</p>
+            <p class="text-xl">Ghosty ("we," "us," or "the App") is a privacy-first app for iPhone, iPad, and Mac developed by <strong>Christian Festa LLC</strong>.</p>
+            <p>It is a privacy firewall that runs on your device: it inspects the domain lookups your apps make, answers the ones on your blocklists locally, and forwards the rest to the DNS resolver you choose. Blocking uses curated categories you can toggle on or off and domains you add yourself (up to 10 in the free tier, unlimited in Premium). Premium also shows every lookup (the free tier shows only blocked entries), longer Insights history, real-time protection, and a choice of resolver. On the Mac, Premium also shows which app made each lookup and lets you exempt an app from filtering. All filtering runs locally on your iPhone, iPad, or Mac.</p>
            
             <p class="font-semibold text-2xl mt-10 mb-2 text-red-600 dark:text-red-400">We do not collect any information about what you browse or block.</p>
             <p class="text-xl font-medium">Lookups, domains, IP addresses, and your blocklists never leave your device. The only data Ghosty ever sends is optional, anonymous usage reports, which are <strong>off by default</strong> and described below.</p>
@@ -51,6 +51,8 @@
                 <li><strong>All filtering happens locally on your device.</strong> No data about connections, blocked entries, custom domains, or traffic logs ever leaves your device or reaches our servers (or anyone else's).</li>
                 <li>Your added domains and toggle settings for curated categories are stored only in secure local storage on your device. Curated lists (if updated) are downloaded as public, non-personalized files with no user identifiers attached.</li>
                 <li><strong>Traffic viewing:</strong> Premium users see full local traffic logs exclusively on-device. Free users see only blocked entries. These logs are never transmitted.</li>
+                <li><strong>Which app made a lookup (Mac only):</strong> on the Mac, Ghosty notes the app behind each lookup by its signing identifier (for example, com.apple.Safari) so it can show activity by app and apply your per-app rules. This stays on your Mac and is never sent anywhere, including in usage reports.</li>
+                <li><strong>How long activity is kept:</strong> the list of individual lookups covers today only and is cleared at midnight. Daily totals per domain (and, on the Mac, per app) are kept for 30 days for Insights, then deleted. On the Mac you can erase all activity at any time in Settings › Privacy.</li>
                 <li><strong>In-app purchases:</strong> Apple processes all subscriptions and payments. We receive no payment details, email addresses, or purchase-related personal information.</li>
                 <li><strong>Advertising and tracking:</strong> The app uses no advertising frameworks and no tracking. It does not share data with data brokers or ad networks.</li>
             </ul>
@@ -59,12 +61,12 @@
             <p>Ghosty can send anonymous usage reports to help us understand which features are used. Usage reports are <strong>off by default</strong>. You are asked during setup, and you can switch them on or off at any time in Settings.</p>
             <ul class="space-y-4 text-base">
                 <li><strong>What is sent:</strong> counts of product actions (for example, that a category was switched on or a purchase completed, including the product purchased) and a hashed device identifier that is not linked to you.</li>
-                <li><strong>What is never sent:</strong> domains, lookups, IP addresses, blocklist entries, or anything you type.</li>
+                <li><strong>What is never sent:</strong> domains, lookups, IP addresses, blocklist entries, app names or identifiers, or anything you type.</li>
                 <li><strong>Where it goes:</strong> reports are delivered only to TelemetryDeck (telemetrydeck.com), an analytics service designed for anonymous, privacy-preserving usage statistics. They are used for analytics only and are not used for tracking or advertising.</li>
             </ul>
 
             <h2>Data Storage</h2>
-            <p>All your settings, custom lists, and local logs (if any) remain on your device using iOS secure storage. They are never backed up to iCloud unless you manually enable it for the app (under your full control). Deleting the app removes all local data.</p>
+            <p>All your settings, custom lists, and local logs remain on your device, in the app's own sandboxed storage. They are never sent to us. Like other app data, they can be included in your own device backups (such as iCloud Backup or Time Machine), which Apple and you control and we cannot access. On iPhone and iPad, deleting the app removes all local data. On the Mac, use Settings › Privacy › Erase all activity before deleting the app if you want its activity removed as well.</p>
 
             <h2>Sharing or Selling Data</h2>
             <p>We do not share, sell, or disclose any data. The only third party that receives anything is TelemetryDeck, and only the anonymous usage counts described above, only while usage reports are switched on.</p>
